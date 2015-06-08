@@ -1,0 +1,23 @@
+                    <div class="col-lg-4 col-md-6">
+                      <a href="#">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                      <img src="http://static1.squarespace.com/static/5092bcb8e4b05d6afda0fbdf/5092dbc1e4b05d6afda1572a/519a4181e4b0be74de0ccb1c/1369064447976/firefighter_profile_002.jpg" class="prophoto">
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">124</div>
+                                        <div>New Orders!</div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                        </div>
+                      </a>
+                    </div>
+
