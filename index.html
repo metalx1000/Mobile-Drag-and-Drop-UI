@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Sortable - Connect lists</title>
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.ui.touch-punch.min.js"></script>
+  <style>
+  .sort{
+    border: 1px solid #eee;
+    width: auto;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: left;
+    margin-right: 10px;
+    font-size: 200%;
+  }
+  .sort li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: auto;
+  }
+
+  .bgblue{
+    background-color: lightblue;
+  }
+
+  ul{
+    background-color: lightgrey;
+  }
+  </style>
+  <script>
+    $(document).ready(function() {
+      $( "#sortable1, #sortable2, #sortable3" ).sortable({
+        connectWith: ".connectedSortable"
+      }).disableSelection();
+
+      $( ".sort" ).on( "sortupdate", function( event, ui ) {
+        save_list();
+      });
+    });
+
+    function save_list(){
+      $('li').each(function(){
+        var id=$(this).attr('id');
+        var list=$(this).parent().attr('id');
+        console.log(id + " is in list " + list);
+      });      
+    }
+  </script>
+</head>
+<body>
+ 
+<ul id="sortable1" class="connectedSortable sort">
+  <a>Station 20</a>
+  <li id="item1" class="ui-state-default">Item 1</li>
+  <li id="item2" class="ui-state-default">
+    <div>Kristofer</div>
+    <img src="http://filmsbykris.com/scripts/Fire-Contacts/me.jpg">
+  </li>
+  <li id="item3" class="ui-state-default">Item 3</li>
+  <li id="item4" class="ui-state-default">Item 4</li>
+  <li id="item5" class="ui-state-default">Item 5</li>
+</ul>
+ 
+<ul id="sortable2" class="connectedSortable sort">
+  <li id="item6" class="ui-state-highlight">Item 6</li>
+  <li id="item7" class="ui-state-highlight">Item 7</li>
+  <li id="item8" class="ui-state-highlight">Item 8</li>
+  <li id="item9" class="ui-state-highlight">Item 9</li>
+  <li id="item10" class="ui-state-highlight">Item 10</li>
+</ul>
+  
+<ul id="sortable3" class="connectedSortable sort">
+  <li id="item11" class="ui-state-highlight bgblue">Item 11</li>
+  <li id="item12" class="ui-state-highlight bgblue">Item 12</li>
+  <li id="item13" class="ui-state-highlight bgblue">Item 13</li>
+  <li id="item14" class="ui-state-highlight bgblue">Item 14</li>
+  <li id="item15" class="ui-state-highlight bgblue">Item 15</li>
+</ul>
+ 
+</body>
+</html>
